@@ -1,0 +1,10 @@
+{
+    "name": "Anchor Editor v0.1",
+    "alias": "witsec-anchor-editor",
+    "version": 0.1,
+    "minAppVersion": "4",	
+    "appScript": true,
+	"coreScript" : false,
+	"description":"Edit the anchors of your blocks. <a href='https://witsec.nl'>Learn more...</a>",
+	"logo":"thumbnail.png"
+}
