@@ -1,7 +1,7 @@
 {
-    "name": "Anchor Editor v0.1",
+    "name": "Anchor Editor v0.2",
     "alias": "witsec-anchor-editor",
-    "version": 0.1,
+    "version": 0.2,
     "minAppVersion": "4",	
     "appScript": true,
 	"coreScript" : false,
