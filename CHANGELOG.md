@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.3 (2019-03-31)
+
+- Added an internal index of components. This fixes an issue where you thought you were editing the anchor of block A, but you were actually editing block B. That happened when the menu component is (technically) not the first one of the page. With this internal index, this is no longer an issue.
+
 ## 0.2 (2019-03-29)
 
 - Removed the icon in the navigation bar

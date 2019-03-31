@@ -1,6 +1,6 @@
 (function(jQuery, mbrApp) {
 
-	var curr;
+	var curr, compIndex;
     mbrApp.regExtension({
         name: "witsec-anchor-editor",
         events: {		
@@ -28,10 +28,20 @@
                 var a = this;
 
 				a.$template.on("click", ".witsec-anchor-editor-shortcut", function(e) {
+					// Re-create component index (this is an internal list only which refers to the actual index, so we don't have to fiddle with that)
+					compIndex = [];
+					for (index in mbrApp.Core.resultJSON[mbrApp.Core.currentPage].components){
+						var comp = mbrApp.Core.resultJSON[mbrApp.Core.currentPage].components[index];
+						if (comp._once == "menu")
+							compIndex.unshift(index);
+						else
+							compIndex.push(index);
+					}
+
 					// Find the index of the clicked icon
 					a.$template.find('.witsec-anchor-editor-shortcut').each(function(index, obj) {
 						if (e.target == obj) {
-							curr = mbrApp.Core.resultJSON[mbrApp.Core.currentPage].components[index];
+							curr = mbrApp.Core.resultJSON[mbrApp.Core.currentPage].components[ compIndex[index] ];
 						}
 					});
 
