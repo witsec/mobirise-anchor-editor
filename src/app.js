@@ -55,7 +55,11 @@ defineM("witsec-anchor-editor", function(g, mbrApp, tr) {
 						title: "Edit Anchor Name",
 						className: "",
 						body: [
-							'<div>Anchor: <input type="text" class"form-control" id="witsec-anchor-editor-name" value="', curr._anchor, '"></div>'
+							'<div class="form-group row">',
+							'  <div class="col-sm-4">',
+							'    <input type="text" class="form-control" id="witsec-anchor-editor-name" value="', curr._anchor, '">',
+							'  </div>',
+							'</div>'
 						].join("\n"),
 						buttons: [
 							{

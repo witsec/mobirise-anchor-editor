@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v4 (2020-08-28)
+
+- Fixed anchor text input not visible when using Dark Mode
+
 ## v3 (2020-03-14)
 
 - Fixed compatibility with Mobirise v5
