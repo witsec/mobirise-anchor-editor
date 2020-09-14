@@ -30,13 +30,23 @@ defineM("witsec-anchor-editor", function(g, mbrApp, tr) {
 				a.$template.on("click", ".witsec-anchor-editor-shortcut", function(e) {
 					// Re-create component index (this is an internal list only which refers to the actual index, so we don't have to fiddle with that)
 					compIndex = [];
+					var footerIndex = false;
 					for (index in mbrApp.Core.resultJSON[mbrApp.Core.currentPage].components){
 						var comp = mbrApp.Core.resultJSON[mbrApp.Core.currentPage].components[index];
-						if (comp._once == "menu")
+
+						// We have to check if there's a footer with the 'always-bottom' attribute
+						var attr = $(comp._customHTML).attr("always-bottom");
+						if (comp._once == "footers" && typeof attr !== typeof undefined && attr !== false)	// Footer with always-bottom
+							footerIndex = index;
+						else if (comp._once == "menu")														// Menu
 							compIndex.unshift(index);
 						else
-							compIndex.push(index);
+							compIndex.push(index);															// Any other block
 					}
+
+					// If there was a footer with the 'always-bottom' attribute, add it last
+					if (footerIndex)
+						compIndex.push(footerIndex);
 
 					// Find the index of the clicked icon
 					a.$template.find('.witsec-anchor-editor-shortcut').each(function(index, obj) {
