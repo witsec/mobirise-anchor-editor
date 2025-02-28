@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v6 (2025-02-28)
+
+- Fixed anchor text input not visible when using Dark Mode
+
 ## v5 (2020-09-14)
 
 - Fixed compatibility with footers that have the 'always-bottom' attribute

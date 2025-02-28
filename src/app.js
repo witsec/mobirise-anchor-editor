@@ -63,8 +63,11 @@ defineM("witsec-anchor-editor", function(g, mbrApp, tr) {
 
 					mbrApp.showDialog({
 						title: "Edit Anchor Name",
-						className: "",
+						className: "witsec-anchor-modal",
 						body: [
+							'<style>',
+							'.witsec-anchor-modal input { color:' + (mbrApp.appSettings["darkMode"] ? "#fff" : "#000") + ' !important }',
+							'</style>',
 							'<div class="form-group row">',
 							'  <div class="col-sm-4">',
 							'    <input type="text" class="form-control" id="witsec-anchor-editor-name" value="', curr._anchor, '">',
